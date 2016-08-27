@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Hello!</title>
+  <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+	$('#inputImg').on('change', function(){
+
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+        console.log(e.target.result);
+        	$('#img').append('<img src="'+e.target.result+'" style="width:300px" />')
+
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+
+  });
+})
+</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>
